@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promo Kami - TaKi</title>
+    <style>
+      /* === GLOBAL STYLE === */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #f6f6f6;
+        color: #222;
+        padding-top: 90px; /* agar tidak tertutup navbar */
+      }
+
+      /* === NAVBAR (Dynamic Island Style) === */
+      .navbar {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 25px;
+        width: 90%;
+        max-width: 900px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .navbar:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar img.logo {
+        height: 45px;
+        border-radius: 50%;
+      }
+
+      .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .navbar-links a {
+        text-decoration: none;
+        color: #222;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .navbar-links a:hover {
+        color: #e63946;
+      }
+
+      .navbar-icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      /* === SECTION PROMO === */
+      .promo-section {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        margin-top: 30px;
+      }
+
+      .promo-section h2 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+        font-weight: 700;
+      }
+
+      .promo-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .promo-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .promo-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .promo-card img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+      }
+
+      .promo-content {
+        padding: 15px;
+      }
+
+      .promo-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .promo-content p {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 600px) {
+        .navbar-links {
+          gap: 15px;
+        }
+        .navbar-links a {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- === NAVBAR === -->
+    <nav class="navbar">
+      <div class="navlogo">
+        <a href="story.html"><img src="img/LogoTaki.png" alt=""></a>
+      </div>
+      <div class="navsection">
+        <div class="navmenu">
+          <a href="#">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="story.html">Brand Story</a>
+        </div>
+        <div class="navicon">
+          <a href="shoppingbag.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></a>
+          <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- === PROMO SECTION === -->
+    <section class="promo-section">
+      <h2>Promo Kami</h2>
+      <div class="promo-container">
+        <div class="promo-card">
+          <img
+            src="https://i.imgur.com/t5P0x2X.jpg"
+            alt="Promo Satay Dumpling Keju"
+          />
+          <div class="promo-content">
+            <h3>Promo Satay Dumpling Keju</h3>
+            <p>Dapatkan dumpling keju dengan harga hanya Rp8.000</p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <img
+            src="https://i.imgur.com/JEMx3LO.jpg"
+            alt="Promo Gila Serba Murah"
+          />
+          <div class="promo-content">
+            <h3>Promo Gila Serba Murah</h3>
+            <p>
+              Nasi Gila Sosis dan Nasi Gila Siomay hanya Rp12.000, Nasi Gila
+              Original hanya Rp9.000
+            </p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <img
+            src="https://i.imgur.com/8h1hYCa.jpg"
+            alt="Promo Cireng Kuah Keju Creamy"
+          />
+          <div class="promo-content">
+            <h3>Promo Cireng Kuah Keju Creamy</h3>
+            <p>Hanya Rp15.000</p>
+          </div>
+        </div>
+
+        <div class="promo-card">
+          <img
+            src="https://i.imgur.com/9hUOozA.jpg"
+            alt="Promo Spesial Duo Maut Taki"
+          />
+          <div class="promo-content">
+            <h3>Promo Spesial Duo Maut Taki</h3>
+            <p>
+              Suki Kuah Bakso Reguler & Nasi Gila Original, bonus Es Teh Jumbo
+              hanya Rp20.000
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === SCRIPT (opsional animasi kecil) === -->
+    <script>
+      // Animasi kecil saat scroll
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".navbar");
+        if (window.scrollY > 10) {
+          nav.style.transform = "translateX(-50%) scale(0.98)";
+        } else {
+          nav.style.transform = "translateX(-50%) scale(1)";
+        }
+      });
+    </script>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

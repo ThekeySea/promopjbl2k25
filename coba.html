@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promo Kami - TaKi</title>
+
+  <style>
+    :root {
+      --redcolor: #e63946;
+      --blacknav: #1e1e1e;
+      --bg: #f6f6f6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: #222;
+      padding-top: 90px;
+      margin-bottom: 70px; /* jarak bawah untuk bottomnav */
+    }
+
+    /* === NAVBAR (Dynamic Island Style) === */
+    .navbar {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 25px;
+      width: 90%;
+      max-width: 900px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .navbar:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar img.logo {
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .navbar-links a {
+      text-decoration: none;
+      color: var(--blacknav);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar-links a:hover,
+    .navbar-links a.active {
+      color: var(--redcolor);
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .navbar-icons i {
+      width: 22px;
+      height: 22px;
+      color: var(--blacknav);
+      transition: 0.3s;
+    }
+
+    .navbar-icons i:hover {
+      color: var(--redcolor);
+    }
+
+    /* === PROMO SECTION === */
+    .promo-section {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      margin-top: 30px;
+    }
+
+    .promo-section h2 {
+      font-size: 1.9rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .promo-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .promo-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .promo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .promo-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .promo-content {
+      padding: 15px;
+    }
+
+    .promo-content h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .promo-content p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* === BOTTOM NAV === */
+    .bottomnav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #fff;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 25px 25px 0 0;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .bottomnav a {
+      text-decoration: none;
+      color: var(--blacknav);
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .bottomnav a i {
+      width: 22px;
+      height: 22px;
+      display: block;
+      margin: 0 auto 3px;
+      transition: 0.3s;
+    }
+
+    .bottomnav a.active i,
+    .bottomnav a:hover i {
+      color: var(--redcolor);
+    }
+
+    @media (max-width: 600px) {
+      .navbar-links {
+        gap: 15px;
+      }
+      .navbar-links a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- === NAVBAR === -->
+  <nav class="navbar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg" alt="Logo" class="logo">
+    <div class="navbar-links">
+      <a href="#">Beranda</a>
+      <a href="#" class="active">Menu</a>
+      <a href="#">Tentang Kami</a>
+    </div>
+    <div class="navbar-icons">
+      <i data-feather="shopping-cart"></i>
+      <i data-feather="user"></i>
+      <i data-feather="map-pin"></i>
+    </div>
+  </nav>
+
+  <!-- === PROMO SECTION === -->
+  <section class="promo-section">
+    <h2>Promo Kami</h2>
+
+    <div class="promo-container">
+      <div class="promo-card">
+        <img src="https://i.imgur.com/WwIxj8W.jpg" alt="Promo Satay Dumpling Keju">
+        <div class="promo-content">
+          <h3>Promo Satay Dumpling Keju</h3>
+          <p>Dapatkan dumpling keju dengan harga hanya Rp8.000</p>
+        </div>
+      </div>
+
+      <div class="promo-card">
+        <img src="https://i.imgur.com/Xa8mFZX.jpg" alt="Promo Gila Serba Murah">
+        <div class="promo-content">
+          <h3>Promo Gila Serba Murah</h3>
+          <p>Nasi Gila Sosis dan Nasi Gila Siomay hanya Rp12.000, Nasi Gila Original hanya Rp9.000</p>
+        </div>
+      </div>
+
+      <div class="promo-card">
+        <img src="https://i.imgur.com/TBa5mth.jpg" alt="Promo Cireng Kuah Keju Creamy">
+        <div class="promo-content">
+          <h3>Promo Cireng Kuah Keju Creamy</h3>
+          <p>Hanya Rp15.000</p>
+        </div>
+      </div>
+
+      <div class="promo-card">
+        <img src="https://i.imgur.com/vjLHe6K.jpg" alt="Promo Spesial Duo Maut Taki">
+        <div class="promo-content">
+          <h3>Promo Spesial Duo Maut Taki</h3>
+          <p>Suki Kuah Bakso Reguler & Nasi Gila Original, dengan bonus Es Teh Jumbo hanya Rp20.000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- === BOTTOM NAV === -->
+  <div class="bottomnav">
+    <a href="#">
+      <i data-feather="home"></i>
+      <span>Beranda</span>
+    </a>
+    <a href="#" class="active">
+      <i data-feather="tag"></i>
+      <span>Promo</span>
+    </a>
+    <a href="#">
+      <i data-feather="book-open"></i>
+      <span>Menu</span>
+    </a>
+    <a href="#">
+      <i data-feather="user"></i>
+      <span>Akun</span>
+    </a>
+  </div>
+
+  <!-- === SCRIPT === -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace();
+
+    // Efek animasi navbar saat scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.navbar');
+      if (window.scrollY > 10) {
+        nav.style.transform = 'translateX(-50%) scale(0.98)';
+      } else {
+        nav.style.transform = 'translateX(-50%) scale(1)';
+      }
+    });
+  </script>
+</body>
+</html>
