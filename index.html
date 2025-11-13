@@ -17,6 +17,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --redcolor: #bf0f0f;
@@ -589,17 +594,19 @@
       }
 
       .lihat-lainnya a {
+        display: inline-block;
         background-color: #ffb300;
         color: white;
         padding: 0.7rem 1.8rem;
         border-radius: 30px;
         text-decoration: none;
         font-weight: 600;
-        transition: 0.3s;
+        transition: 0.3s ease;
       }
 
       .lihat-lainnya a:hover {
         background-color: #e09a00;
+        transform: scale(1.02);
       }
 
       /* Menu Gerak Section */
@@ -640,6 +647,253 @@
 
       .menugerak .text:hover {
         color: var(--redcolor);
+      }
+
+      /* Testimoni Section */
+      /* Testimoni Section */
+      .testimoni {
+        padding: 6rem 7%;
+        background: #fff;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .testimoni-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 3rem;
+      }
+
+      .testimoni-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+      }
+
+      .testimoni-card {
+        background: #bf0f0f;
+        color: #fff;
+        border-radius: 1.2rem;
+        padding: 1.5rem 1.5rem;
+        width: 300px;
+        height: 380px; /* Fixed height untuk semua card */
+        box-shadow: 0 10px 25px rgba(191, 15, 15, 0.25);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .testimoni-card:hover {
+        transform: translateY(-6px);
+        
+        box-shadow: 0 14px 28px rgba(191, 15, 15, 0.35);
+      }
+
+      .testi-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #fff;
+        margin-bottom: 0.8rem; /* Kurangi jarak ke nama */
+      }
+
+      .testimoni-card h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0; /* Hilangkan margin bawah nama */
+      }
+
+      .testimoni-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #f9f9f9;
+        flex-grow: 1; /* Membuat area teks fleksibel mengisi ruang tengah */
+        display: flex;
+        align-items: center; /* Vertikal center untuk teks di tengah card */
+        justify-content: center;
+        padding: 1rem 0; /* Beri sedikit padding atas bawah */
+      }
+
+      .stars {
+        color: #ffcc00;
+        font-size: 1.1rem;
+        padding-bottom: 0.5rem; /* Beri sedikit padding agar tidak mepet ke bawah */
+      }
+
+      /* Ulasan Section */
+      .ulasan {
+        padding: 4rem 7%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .ulasan-container {
+        background: linear-gradient(135deg, #bf0f0f 0%, #d32f2f 100%);
+        border-radius: 1.5rem;
+        padding: 3rem 2.5rem;
+        max-width: 1000px;
+        width: 100%;
+        box-shadow: 0 10px 30px rgba(191, 15, 15, 0.3);
+      }
+
+      .ulasan-title {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .rating-label {
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .rating-stars {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .star-btn {
+        background: transparent;
+        border: 3px solid #fff;
+        border-radius: 12px;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .star-btn i {
+        color: #fff;
+        font-size: 1.8rem;
+        opacity: 0.3;
+        transition: opacity 0.3s ease;
+      }
+
+      .star-btn:hover {
+        transform: scale(1.1);
+        border-color: #ffcc00;
+      }
+
+      .star-btn:hover i {
+        color: #ffcc00;
+        opacity: 1;
+      }
+
+      .star-btn.active i {
+        color: #ffcc00;
+        opacity: 1;
+      }
+
+      .review-label {
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .review-textarea {
+        width: 100%;
+        background: transparent;
+        border: 3px solid #fff;
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        resize: vertical;
+        min-height: 140px;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .review-textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .review-textarea:focus {
+        outline: none;
+        border-color: #ffcc00;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .submit-review-btn {
+        background: #fff;
+        color: #bf0f0f;
+        border: none;
+        padding: 0.8rem 2.5rem;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        float: right;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .submit-review-btn:hover {
+        background: #ffcc00;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsif Ulasan */
+      @media (max-width: 768px) {
+        .ulasan-container {
+          padding: 2rem 1.5rem;
+        }
+
+        .ulasan-title {
+          font-size: 1.5rem;
+        }
+
+        .rating-stars {
+          gap: 0.5rem;
+        }
+
+        .star-btn {
+          width: 50px;
+          height: 50px;
+        }
+
+        .star-btn i {
+          font-size: 1.5rem;
+        }
+
+        .submit-review-btn {
+          width: 100%;
+          float: none;
+        }
+      }
+
+      /* Responsif */
+      @media (max-width: 768px) {
+        .testimoni-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .testimoni-card {
+          width: 90%;
+        }
       }
 
       /* Kiri */
@@ -750,7 +1004,7 @@
       }
 
       .footercolumn ul li a:hover {
-        color: var(--redcolor);
+        color: var(--yellow);
       }
 
       .footerbottom {
@@ -955,7 +1209,7 @@
         <div class="navmenu">
           <a href="#">Home</a>
           <a href="menu.html">Menu</a>
-          <a href="story.html">Brand Story</a>
+          <a href="story.html">Tentang Kami</a>
         </div>
         <div class="navicon">
           <a href="cart.html"><i data-feather="shopping-cart"></i></a>
@@ -1073,28 +1327,28 @@
 
       <div class="menu-container">
         <div class="menu-card">
-          <img src="img/MenuTaki/BasoAci.jpeg" alt="" />
+          <img src="img/MenuTaki/seblak-original.png" alt="" />
           <h3>Seblak Ori</h3>
           <p>Rp. 10.000</p>
           <button>+ Tambah</button>
         </div>
 
         <div class="menu-card">
-          <img src="img/MenuTaki/BasoAci.jpeg" alt="" />
+          <img src="img/MenuTaki/seblak-komplit.png" alt="" />
           <h3>Seblak Komplit</h3>
           <p>Rp. 20.000</p>
           <button>+ Tambah</button>
         </div>
 
         <div class="menu-card">
-          <img src="img/MenuTaki/BasoAci.jpeg" alt="" />
+          <img src="img/MenuTaki/cireng-kuahkeju.png" alt="" />
           <h3>Cireng Kuah Keju</h3>
           <p>Rp. 20.000</p>
           <button>+ Tambah</button>
         </div>
 
         <div class="menu-card">
-          <img src="img/MenuTaki/BasoAci.jpeg" alt="" />
+          <img src="img/MenuTaki/NasiGilaOri-taki.jpg" alt="" />
           <h3>Nasi Gila Ori</h3>
           <p>Rp. 10.000</p>
           <button>+ Tambah</button>
@@ -1168,6 +1422,85 @@
     </section>
     <!-- MenuGerak End -->
 
+    <!-- Testimoni Section Start -->
+    <section class="testimoni">
+      <h2 class="testimoni-title">Apa Kata Mereka?</h2>
+      <div class="testimoni-container">
+        <div class="testimoni-card">
+          <img src="img/lita.jpeg" alt="" class="testi-img" />
+          <h3>Arqueeny Pertiwi</h3>
+          <p>“Seblak nya sangat mantap. Udah kelima kali beli di sini”</p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+        <div class="testimoni-card">
+          <img src="img/nando.jpeg" alt="" class="testi-img" />
+          <h3>Nando Hartanto</h3>
+          <p>“Nasi Gila nya beneran gila, rasa nya gila banget men!”</p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+        <div class="testimoni-card">
+          <img src="img/nana.jpeg" alt="" class="testi-img" />
+          <h3>Nana Nusaibah</h3>
+          <p>
+            “Ga cuman seblaknya yang enak, sate loklok sama minumannya juga
+            gokil”
+          </p>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimoni Section End -->
+
+    <!-- Ulasan Section -->
+    <section class="ulasan">
+      <div class="ulasan-container">
+        <h2 class="ulasan-title">Beri Ulasan Anda</h2>
+
+        <div class="rating-label">Penilaian Anda</div>
+        <div class="rating-stars">
+          <button class="star-btn" data-rating="1">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <button class="star-btn" data-rating="2">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <button class="star-btn" data-rating="3">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <button class="star-btn" data-rating="4">
+            <i class="fa-solid fa-star"></i>
+          </button>
+          <button class="star-btn" data-rating="5">
+            <i class="fa-solid fa-star"></i>
+          </button>
+        </div>
+
+        <label class="review-label">Ulasan Anda</label>
+        <textarea
+          class="review-textarea"
+          placeholder="Tulis ulasan Anda di sini..."
+          rows="6"
+        ></textarea>
+
+        <button class="submit-review-btn">Kirim</button>
+      </div>
+    </section>
+    <!-- Ulasan Section End -->
+
     <!-- Footer Start -->
     <footer class="footer">
       <div class="footercontainer">
@@ -1192,7 +1525,7 @@
         <div class="footercolumn">
           <h3>Navigasi</h3>
           <ul>
-            <li><a href="#">Beranda</a></li>
+            <li><a href="#home">Beranda</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="story.html">Tentang Kami</a></li>
           </ul>
@@ -1201,13 +1534,37 @@
         <!-- Kolom 3 -->
         <div class="footercolumn">
           <h3>Lokasi Outlet</h3>
-          <a href="https://maps.app.goo.gl/LTvoLGByuV2yoX4r5"
-            ><img
-              src="img/footermap.png"
-              alt="Peta Lokasi Kedai TaKi ID"
-              style="width: 200px; border-radius: 8px; margin-bottom: 10px"
-              class="footermaps"
-          /></a>
+
+          <!-- Map responsive -->
+          <div
+            class="footermap-container"
+            style="
+              position: relative;
+              width: 100%;
+              padding-bottom: 56.25%;
+              height: 0;
+              overflow: hidden;
+              border-radius: 8px;
+              margin-bottom: 10px;
+            "
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.777651913909!2d112.79764207400173!3d-7.285904092721404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb57d44c77f5%3A0x2585e1deb7a1c3b1!2sSeblak%20Prasmanan%20Taki%20Id!5e1!3m2!1sen!2sid!4v1762998867292!5m2!1sen!2sid"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+              "
+            >
+            </iframe>
+          </div>
+
           <p style="color: #ededed; font-size: 0.9rem; line-height: 1.5">
             Kejawan Gebang III No.22,<br />
             RT.002/RW.04, Gebang Putih, Kec. Sukolilo,<br />
@@ -1287,13 +1644,13 @@
         closePopup();
       });
 
-      // ✅ Tambahan: tutup popup saat klik di luar area form
+      // tambahan: tutup popup saat klik di luar area form
       window.addEventListener("click", (e) => {
         // pastikan popup sedang terbuka
         if (popup.style.display === "block") {
           const formArea = document.querySelector("#popuplogin form");
 
-          // 🧠 Cegah popup tertutup kalau klik pada elemen pemicu (usericon)
+          //Cegah popup tertutup kalau klik pada elemen pemicu (usericon)
           const clickedUserIcon = e.target.closest(".usericon");
 
           // Jika bukan form dan bukan icon pemicu, baru tutup popup
@@ -1302,6 +1659,69 @@
           }
         }
       });
+    </script>
+
+    <!-- untuk section ulasan -->
+    <script>
+      const starButtons = document.querySelectorAll(".star-btn");
+      let selectedRating = 0;
+
+      starButtons.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+          selectedRating = index + 1;
+
+          // Reset semua bintang
+          starButtons.forEach((b) => b.classList.remove("active"));
+
+          // Aktifkan bintang yang dipilih dan sebelumnya
+          for (let i = 0; i <= index; i++) {
+            starButtons[i].classList.add("active");
+          }
+        });
+
+        // Hover effect
+        btn.addEventListener("mouseenter", () => {
+          for (let i = 0; i <= index; i++) {
+            starButtons[i].querySelector("i").style.opacity = "1";
+            starButtons[i].querySelector("i").style.color = "#ffcc00";
+          }
+        });
+
+        btn.addEventListener("mouseleave", () => {
+          starButtons.forEach((b, i) => {
+            if (i >= selectedRating) {
+              b.querySelector("i").style.opacity = "0.3";
+              b.querySelector("i").style.color = "#fff";
+            }
+          });
+        });
+      });
+
+      // Submit review
+      document
+        .querySelector(".submit-review-btn")
+        .addEventListener("click", () => {
+          const reviewText = document.querySelector(".review-textarea").value;
+
+          if (selectedRating === 0) {
+            alert("Silakan pilih rating bintang terlebih dahulu!");
+            return;
+          }
+
+          if (reviewText.trim() === "") {
+            alert("Silakan tulis ulasan Anda!");
+            return;
+          }
+
+          alert(
+            `Terima kasih atas ulasan Anda!\nRating: ${selectedRating} bintang\nUlasan: ${reviewText}`
+          );
+
+          // Reset form
+          selectedRating = 0;
+          starButtons.forEach((b) => b.classList.remove("active"));
+          document.querySelector(".review-textarea").value = "";
+        });
     </script>
 
     <!-- === SCRIPT (opsional animasi kecil) === -->
@@ -1314,6 +1734,28 @@
         } else {
           nav.style.transform = "scale(1)";
         }
+      });
+    </script>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, // durasi animasi dalam ms
+        easing: "ease-in-out", // jenis easing
+        once: true, // animasi hanya sekali saat scroll
+      });
+    </script>
+
+    <!-- AOS untuk testimoni-card-->
+    <script>
+      const cards = document.querySelectorAll(".testimoni-card");
+      cards.forEach((card, i) => {
+        card.setAttribute("data-aos", "fade-up");
+        card.setAttribute("data-aos-delay", i * 100); // tiap card delay 150ms
+      });
+      AOS.init({
+        once: false, // animasi hanya sekali
       });
     </script>
 

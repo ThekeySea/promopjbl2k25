@@ -16,84 +16,11 @@
       body {
         background-color: #f6f6f6;
         color: #222;
-        padding-top: 90px; /* agar tidak tertutup navbar */
         padding-bottom: 100px;
       }
 
       :root {
         --yellow: #f4b400; /* atau warna kuning khas TaKi */
-      }
-
-      /* Navbar */
-      .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #ededed;
-        position: fixed;
-        top: 1.4rem;
-        left: 7rem;
-        right: 7rem;
-        z-index: 9999; /* pastikan di atas elemen lain */
-        padding: 0.3rem 2rem;
-        border-radius: 1rem;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .navbar img {
-        width: 55px;
-      }
-
-      .navbar .navsection {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      .navbar .navmenu {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      .navbar .navmenu a {
-        display: inline-block;
-        transition: all 0.2s ease-in-out;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .navbar .navmenu a:hover {
-        color: var(--yellow) !important;
-      }
-
-      .navbar .navmenu a::after {
-        content: "";
-        display: block;
-        border-bottom: 0.1rem solid var(--yellow);
-        transform: scaleX(0);
-        transition: 0.2s linear;
-      }
-
-      .navbar .navmenu a:hover::after {
-        transform: scaleX(0.5);
-      }
-
-      .navbar .navicon {
-        display: flex;
-        align-items: center;
-        gap: 3rem;
-      }
-
-      .navbar .navicon a {
-        display: inline-block;
-        transition: all 0.2s ease-in-out;
-        color: inherit;
-      }
-
-      .navbar .navicon a:hover {
-        color: var(--yellow);
       }
 
       /* ===== Tombol Ke Beranda ===== */
@@ -210,23 +137,6 @@
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navlogo">
-        <a href="story.html"><img src="img/LogoTaki.png" alt="" /></a>
-      </div>
-      <div class="navsection">
-        <div class="navmenu">
-          <a href="index.html">Home</a>
-          <a href="menu.html">Menu</a>
-          <a href="story.html">Brand Story</a>
-        </div>
-        <div class="navicon">
-          <a href="cart.html"><i data-feather="shopping-cart"></i></a>
-          <a href="" class="usericon"><i data-feather="user"></i></a>
-        </div>
-      </div>
-    </nav>
 
     <!-- Tombol Kembali -->
     <a href="index.html#promo" class="backbtn">⟵ Kembali</a>
