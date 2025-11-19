@@ -56,6 +56,7 @@
           background: #fff;
         }
 
+
         /* Footer */
         .footercontainer {
           flex-direction: column;
@@ -63,22 +64,48 @@
           text-align: center;
         }
 
+        /* Navbar berubah jadi top kecil */
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          border-radius: 0;
+          padding: 0.8rem 1rem;
+          justify-content: center;
+          box-shadow: none;
+        }
+
+        .navbar .navmenu {
+          display: none; /* Sembunyikan menu atas di HP */
+        }
+
+        .navbar .navicon {
+          display: none; /* Sembunyikan menu atas di HP */
+        }
+
+        .navbar img {
+          width: 45px;
+        }
+
         /* Bottom Navigation (seperti aplikasi Pizza Hut) */
         /* ============================= */
         /* 📱 Bottom Navigation (Handphone) */
         /* ============================= */
+        /* Bottomnav Mobile */
         .bottomnav {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          bottom: 0.5rem;
+          left: 2.5rem;
+          right: 2.5rem;
           height: 70px;
           background-color: #fff;
           border-top: 1px solid #ddd;
           box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+          border-radius: 25px;
           z-index: 9999;
           padding-bottom: env(
             safe-area-inset-bottom
@@ -96,6 +123,7 @@
           justify-content: center;
           text-decoration: none;
           line-height: 1.2;
+          transition: all 0.3s ease;
         }
 
         .bottomnav a i {
@@ -105,8 +133,13 @@
         }
 
         .bottomnav a.active {
-          color: var(--redcolor);
+          color: var(--yellow);
           font-weight: 600;
+        }
+
+        .bottomnav a:hover {
+          color: var(--yellow);
+          transform: scale(1.05);
         }
 
         .bottomnav a span {
@@ -319,6 +352,7 @@
       <a href="#" class="active"><i data-feather="shopping-cart"></i>Pesanan</a>
       <a href="#" id="profileLink"><i data-feather="user"></i>Profil</a>
     </div>
+    
     <script>
       // Cek status login dari localStorage
       const profileLink = document.getElementById("profileLink");

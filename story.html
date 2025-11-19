@@ -110,7 +110,7 @@
       }
 
       .navbar .navicon a:hover {
-        color: #e3252f;
+        color: var(--yellow);
       }
 
       /* Home Section */
@@ -118,7 +118,7 @@
         min-height: 100vh;
         display: flex;
         align-items: center;
-        background-image: url(img/fotostory.png);
+        background-image: url(img/StoryBannerAsli.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -203,6 +203,13 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 40px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .aboutcontainer:hover {
+        transform: scale(1.01);
+        background-color: #9d1919;
       }
 
       .aboutimg img {
@@ -385,8 +392,8 @@
       .footer {
         margin-top: 8vh;
         padding: 60px 7% 30px;
-        background-color: var(--bgstory);
-        color: #000;
+        background-color: var(--blacknav);
+        color: #ffffff;
         font-family: "Poppins", sans-serif;
       }
 
@@ -418,7 +425,7 @@
 
       .footerleft p {
         margin: 15px 0;
-        color: #333;
+        color: #ffffff;
         line-height: 1.5;
       }
 
@@ -429,13 +436,13 @@
       }
 
       .socialicons a {
-        color: #000;
+        color: #ffffff;
         font-size: 1.3rem;
         transition: color 0.3s ease;
       }
 
       .socialicons a:hover {
-        color: var(--redcolor);
+        color: var(--yellow);
       }
 
       /* Kolom kanan */
@@ -449,7 +456,7 @@
         font-weight: 700;
         margin-bottom: 15px;
         text-transform: uppercase;
-        color: #111;
+        color: #ffffff;
       }
 
       .footercolumn ul {
@@ -464,18 +471,18 @@
 
       .footercolumn ul li a {
         text-decoration: none;
-        color: #444;
+        color: #ffffff;
         transition: color 0.3s;
       }
 
       .footercolumn ul li a:hover {
-        color: var(--redcolor);
+        color: var(--yellow);
       }
 
       .footerbottom {
         text-align: center;
         font-size: 0.9rem;
-        color: #666;
+        color: #b5b5b5;
         margin-top: 40px;
         padding-top: 20px;
       }
@@ -516,6 +523,7 @@
 
         /* Section Home */
         .home {
+          background-image: url(img/Mobile-StoryBanner.png);
           background-size: cover;
           background-position: center;
           text-align: center;
@@ -528,7 +536,36 @@
         }
 
         .home .content p {
+          font-size: 1rem;
+          max-width: 20rem;
+        }
+
+        .home .textbox h2 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #000;
+          margin-bottom: 2rem;
+        }
+
+        .home .textbox h2 span {
+          color: var(--redcolor);
+          padding: 0 0.3rem;
+          border-radius: 4px;
+        }
+
+        .home .btn {
+          background-color: var(--redcolor);
+          color: #fff;
+          padding: 0.7rem 1.5rem;
+          border-radius: 8px;
+          font-weight: 600;
           font-size: 0.9rem;
+          text-decoration: none;
+          transition: 0.3s;
+        }
+
+        .home .btn:hover {
+          background-color: #9d1919;
         }
 
         /* Footer */
@@ -541,16 +578,17 @@
         /* Bottomnav Mobile */
         .bottomnav {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          bottom: 0.5rem;
+          left: 2.5rem;
+          right: 2.5rem;
           height: 70px;
           background-color: #fff;
           border-top: 1px solid #ddd;
           box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+          border-radius: 25px;
           z-index: 9999;
           padding-bottom: env(
             safe-area-inset-bottom
@@ -568,6 +606,7 @@
           justify-content: center;
           text-decoration: none;
           line-height: 1.2;
+          transition: all 0.3s ease;
         }
 
         .bottomnav a i {
@@ -577,8 +616,13 @@
         }
 
         .bottomnav a.active {
-          color: var(--redcolor);
+          color: var(--yellow);
           font-weight: 600;
+        }
+
+        .bottomnav a:hover {
+          color: var(--yellow);
+          transform: scale(1.05);
         }
 
         .bottomnav a span {
@@ -759,14 +803,41 @@
         </div>
 
         <!-- Kolom 3 -->
+        <
         <div class="footercolumn">
           <h3>Lokasi Outlet</h3>
-          <img
-            src="lokasi.jpg"
-            alt="Peta Lokasi Kedai TaKi ID"
-            style="width: 100%; border-radius: 8px; margin-bottom: 10px"
-          />
-          <p style="color: #333; font-size: 0.9rem; line-height: 1.5">
+
+          <!-- Map responsive -->
+          <div
+            class="footermap-container"
+            style="
+              position: relative;
+              width: 100%;
+              padding-bottom: 56.25%;
+              height: 0;
+              overflow: hidden;
+              border-radius: 8px;
+              margin-bottom: 10px;
+            "
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.777651913909!2d112.79764207400173!3d-7.285904092721404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb57d44c77f5%3A0x2585e1deb7a1c3b1!2sSeblak%20Prasmanan%20Taki%20Id!5e1!3m2!1sen!2sid!4v1762998867292!5m2!1sen!2sid"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+              "
+            >
+            </iframe>
+          </div>
+
+          <p style="color: #ededed; font-size: 0.9rem; line-height: 1.5">
             Kejawan Gebang III No.22,<br />
             RT.002/RW.04, Gebang Putih, Kec. Sukolilo,<br />
             Surabaya, Jawa Timur 60117
@@ -782,9 +853,24 @@
     <div class="bottomnav">
       <a href="index.html"><i data-feather="home"></i>Home</a>
       <a href="menu.html"><i data-feather="book-open"></i>Menu</a>
-      <a href="shoppingcart.html"><i data-feather="shopping-cart"></i>Pesanan</a>
+      <a href="shoppingcart.html"
+        ><i data-feather="shopping-cart"></i>Pesanan</a
+      >
       <a href="#"><i data-feather="user"></i>Profil</a>
     </div>
+
+    <!-- === SCRIPT (opsional animasi kecil) === -->
+    <script>
+      // Animasi kecil saat scroll
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".navbar");
+        if (window.scrollY > 10) {
+          nav.style.transform = "scale(0.98)";
+        } else {
+          nav.style.transform = "scale(1)";
+        }
+      });
+    </script>
 
     <!-- Feather Icons -->
     <script>
