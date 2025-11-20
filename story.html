@@ -499,26 +499,43 @@
 
         /* Navbar berubah jadi top kecil */
         .navbar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          border-radius: 0;
-          padding: 0.8rem 1rem;
+          display: flex;
+          align-items: center;
           justify-content: center;
-          box-shadow: none;
+          position: fixed;
+          top: 0.5rem;
+          left: 1.5rem;
+          right: 2.5rem;
+
+          width: 80px;
+          height: 70px; /* Samakan dengan bottomnav */
+          background-color: #fff; /* Background putih */
+          border-radius: 25px; /* Bentuk kapsul */
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Shadow halus seperti navbar bawah */
+
+          padding: 0 1rem;
+          z-index: 9999;
+
+          padding-top: env(safe-area-inset-top);
+
+          transition: all 0.3s ease;
         }
 
-        .navbar .navmenu {
-          display: none; /* Sembunyikan menu atas di HP */
+        .navbar:hover {
+          transform: scale(1.01) !important;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
+        /* Sembunyikan menu dan ikon desktop */
+        .navbar .navmenu,
         .navbar .navicon {
-          display: none; /* Sembunyikan menu atas di HP */
+          display: none;
         }
 
+        /* Logo di tengah */
         .navbar img {
           width: 45px;
+          height: 45px;
         }
 
         /* Section Home */
@@ -616,12 +633,12 @@
         }
 
         .bottomnav a.active {
-          color: var(--yellow);
+          color: var(--redcolor);
           font-weight: 600;
         }
 
         .bottomnav a:hover {
-          color: var(--yellow);
+          color: var(--redcolor);
           transform: scale(1.05);
         }
 
@@ -663,7 +680,7 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navlogo">
-        <img src="img/LogoTaki.png" alt="" />
+        <a href="index.html"><img src="img/LogoTaki.png" alt="" /></a>
       </div>
       <div class="navsection">
         <div class="navmenu">

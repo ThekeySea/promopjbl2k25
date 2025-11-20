@@ -127,26 +127,43 @@
 
         /* Navbar berubah jadi top kecil */
         .navbar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          border-radius: 0;
-          padding: 0.8rem 1rem;
+          display: flex;
+          align-items: center;
           justify-content: center;
-          box-shadow: none;
+          position: fixed;
+          top: 0.5rem;
+          left: 1.5rem;
+          right: 2.5rem;
+
+          width: 80px;
+          height: 70px; /* Samakan dengan bottomnav */
+          background-color: #fff; /* Background putih */
+          border-radius: 25px; /* Bentuk kapsul */
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Shadow halus seperti navbar bawah */
+
+          padding: 0 1rem;
+          z-index: 9999;
+
+          padding-top: env(safe-area-inset-top);
+
+          transition: all 0.3s ease;
         }
 
-        .navbar .navmenu {
-          display: none; /* Sembunyikan menu atas di HP */
+        .navbar:hover {
+          transform: scale(1.01) !important;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
+        /* Sembunyikan menu dan ikon desktop */
+        .navbar .navmenu,
         .navbar .navicon {
-          display: none; /* Sembunyikan menu atas di HP */
+          display: none;
         }
 
+        /* Logo di tengah */
         .navbar img {
           width: 45px;
+          height: 45px;
         }
 
         /* Section Home */
@@ -208,18 +225,20 @@
         /* ============================= */
         /* 📱 Bottom Navigation (Handphone) */
         /* ============================= */
+        /* Bottomnav Mobile */
         .bottomnav {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          bottom: 0.5rem;
+          left: 2.5rem;
+          right: 2.5rem;
           height: 70px;
           background-color: #fff;
           border-top: 1px solid #ddd;
           box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+          border-radius: 25px;
           z-index: 9999;
           padding-bottom: env(
             safe-area-inset-bottom
@@ -237,6 +256,7 @@
           justify-content: center;
           text-decoration: none;
           line-height: 1.2;
+          transition: all 0.3s ease;
         }
 
         .bottomnav a i {
@@ -248,6 +268,11 @@
         .bottomnav a.active {
           color: var(--redcolor);
           font-weight: 600;
+        }
+
+        .bottomnav a:hover {
+          color: var(--redcolor);
+          transform: scale(1.05);
         }
 
         .bottomnav a span {
@@ -322,9 +347,7 @@
     <div class="bottomnav">
       <a href="index.html"><i data-feather="home"></i>Home</a>
       <a href="menu.html"><i data-feather="book-open"></i>Menu</a>
-      <a href="#" class="active"
-        ><i data-feather="shopping-cart"></i>Pesanan</a
-      >
+      <a href="#" class="active"><i data-feather="shopping-cart"></i>Pesanan</a>
       <a href="#" id="profileLink"><i data-feather="user"></i>Profil</a>
     </div>
     <script>

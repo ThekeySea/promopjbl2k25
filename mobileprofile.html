@@ -22,10 +22,6 @@
         color: #222;
         margin: 0;
         padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
       }
 
       .profile-container {
@@ -227,7 +223,7 @@
         }
 
         .backbtn {
-            display: none;
+          display: none;
         }
 
         /* Navbar berubah jadi top kecil */
@@ -257,16 +253,17 @@
         /* Bottomnav Mobile */
         .bottomnav {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          bottom: 0.5rem;
+          left: 2.5rem;
+          right: 2.5rem;
           height: 70px;
           background-color: #fff;
           border-top: 1px solid #ddd;
           box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
+          border-radius: 25px;
           z-index: 9999;
           padding-bottom: env(
             safe-area-inset-bottom
@@ -284,6 +281,7 @@
           justify-content: center;
           text-decoration: none;
           line-height: 1.2;
+          transition: all 0.3s ease;
         }
 
         .bottomnav a i {
@@ -293,8 +291,13 @@
         }
 
         .bottomnav a.active {
-          color: var(--redcolor);
+          color: var(--yellow);
           font-weight: 600;
+        }
+
+        .bottomnav a:hover {
+          color: var(--yellow);
+          transform: scale(1.05);
         }
 
         .bottomnav a span {
@@ -370,14 +373,10 @@
 
     <!-- Bottom Navigation -->
     <div class="bottomnav">
-      <a href="index.html"><i data-feather="home"></i>Home</a>
+      <a href="#" class="active"><i data-feather="home"></i>Home</a>
       <a href="menu.html"><i data-feather="book-open"></i>Menu</a>
-      <a href="shoppingcart.html"
-        ><i data-feather="shopping-cart"></i>Pesanan</a
-      >
-      <a href="#" id="profileLink" class="active"
-        ><i data-feather="user"></i>Profil</a
-      >
+      <a href="cart.html"><i data-feather="shopping-cart"></i>Pesanan</a>
+      <a href="#" id="profileLink"><i data-feather="user"></i>Profil</a>
     </div>
 
     <script>
